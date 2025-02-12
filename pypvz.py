@@ -7,9 +7,12 @@ from logging.handlers import RotatingFileHandler
 # 由于在后续本地模块中存在对pygame的调用，在此处必须完成pygame的初始化
 os.environ["SDL_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR"]="0" # 设置临时环境变量以避免Linux下禁用x11合成器
 pg.init()
+pg.mixer.init()
+
+from source import constants as c
+screen = pg.display.set_mode((c.SCREEN_WIDTH, c.SCREEN_HEIGHT), pg.FULLSCREEN)
 
 from source import tool
-from source import constants as c
 from source.state import mainmenu, screen, level
 
 if __name__ == "__main__":
