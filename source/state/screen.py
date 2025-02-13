@@ -81,9 +81,9 @@ class GameVictoryScreen(Screen):
 
 class GameLoseScreen(Screen):
     def __init__(self):
-        self.screen = pg.display.set_mode((c.SCREEN_WIDTH, c.SCREEN_HEIGHT), pg.FULLSCREEN)
-        self.image_name = c.GAME_VICTORY_IMAGE
-
+        Screen.__init__(self)
+        self.image_name = c.GAME_LOSE_IMAGE
+    
     def startup(self, current_time, persist):
         self.start_time = current_time
         self.persist = persist
