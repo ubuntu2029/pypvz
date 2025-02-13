@@ -9,10 +9,11 @@ os.environ["SDL_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR"]="0" # 设置临时环境变
 pg.init()
 pg.mixer.init()
 
-from source import constants as c
-screen = pg.display.set_mode((c.SCREEN_WIDTH, c.SCREEN_HEIGHT), pg.FULLSCREEN)
+
 
 from source import tool
+from source import constants as c
+screen = pg.display.set_mode((c.SCREEN_WIDTH, c.SCREEN_HEIGHT), pg.FULLSCREEN)
 from source.state import mainmenu, screen, level
 
 if __name__ == "__main__":
